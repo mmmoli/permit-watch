@@ -15,3 +15,4 @@ yarn.lock
 test-results
 playwright-report
 blob-report
+**/districts-data.json
