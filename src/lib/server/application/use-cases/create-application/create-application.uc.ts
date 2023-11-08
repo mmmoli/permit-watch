@@ -8,9 +8,9 @@ export class CreateApplicationUseCase
 {
 	constructor(protected readonly deps: CreateApplicationUseCaseDeps) {}
 
-	async execute(): Promise<Promise<IResult<void>>> {
+	async execute(data: CreateApplicationUseCaseDTO): Promise<Promise<IResult<void>>> {
 		const applicationResult = Application.createWithDefaults({
-			applicantId: ID.create()
+			applicantId: ID.create(data.applicantId)
 		});
 		if (applicationResult.isFail()) return Fail(applicationResult.error());
 		const application = applicationResult.value();

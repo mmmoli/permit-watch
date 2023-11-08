@@ -12,7 +12,7 @@ export class InMemoryApplicationRepository implements ApplicationRepoTrait {
 	}
 
 	async save(application: Application): Promise<IResult<void>> {
-		Logger.info('Fake note application…');
+		Logger.info('Fake Permit application…');
 		Logger.info(JSON.stringify(application.toObject(), undefined, 2));
 		return Ok();
 	}

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CreateApplicationButton } from '$lib/features/create-application-button';
 	import type { PokemonItem } from '../lib/fetch-pokemon';
 	export let pokemon: PokemonItem;
 </script>
@@ -13,4 +14,4 @@
 	<a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
 
-<button type="button" class="btn variant-filled-primary">Button</button>
+<CreateApplicationButton />
