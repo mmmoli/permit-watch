@@ -11,9 +11,9 @@ export const router = t.router({
 	createApplication: t.procedure
 		.input(z.object({ name: z.string() }))
 		.mutation(async ({ input: { name } }) => {
-			const useCase = await import('$lib/server/features/create-application').then(
-				(m) => m.createApplication
-			);
+			const useCase = await import('$lib/server/features/create-application').then((m) => {
+				return m.createApplicationUseCase;
+			});
 			const result = await useCase.execute({
 				applicantId: name
 			});
