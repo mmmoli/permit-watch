@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { AppBar } from '@skeletonlabs/skeleton';
+	import { UserButton } from '$lib/features/user-button';
 </script>
 
 <AppBar
@@ -11,14 +12,14 @@
 	slotTrail="place-content-end"
 >
 	<svelte:fragment slot="lead">
-		<span class="text-sm" data-testid="masthead-tagline">Creative Tech Entrepreneur</span>
+		<span class="text-sm" data-testid="masthead-tagline">Keeping folks accountable</span>
 	</svelte:fragment>
 
 	<div class="flex justify-center space-x-2">
-		<span class="text-sm" data-testid="masthead-brand"> Michele Memoli </span>
+		<span class="text-sm" data-testid="masthead-brand"> Permit Watch </span>
 	</div>
 
 	<svelte:fragment slot="trail">
-		<button type="button" class="btn btn-sm variant-filled-primary">Button</button>
+		<UserButton />
 	</svelte:fragment>
 </AppBar>
