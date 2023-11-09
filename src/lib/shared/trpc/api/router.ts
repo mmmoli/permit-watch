@@ -9,13 +9,13 @@ export const router = t.router({
 		return `Hello tRPC v10 @ ${new Date().toLocaleTimeString()}`;
 	}),
 	createApplication: t.procedure
-		.input(z.object({ name: z.string() }))
-		.mutation(async ({ input: { name } }) => {
+		.input(z.object({ applicantId: z.string() }))
+		.mutation(async ({ input: { applicantId } }) => {
 			const useCase = await import('$lib/server/features/create-application').then((m) => {
 				return m.createApplicationUseCase;
 			});
 			const result = await useCase.execute({
-				applicantId: name
+				applicantId
 			});
 			if (result.isFail())
 				throw new TRPCError({

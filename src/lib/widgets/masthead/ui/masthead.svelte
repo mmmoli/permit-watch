@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { AppBar } from '@skeletonlabs/skeleton';
 	import { UserButton } from '$lib/features/user-button';
+	import { Breadcrumbs } from '$lib/features/breadcrumbs';
 </script>
 
 <AppBar
@@ -12,7 +13,7 @@
 	slotTrail="place-content-end"
 >
 	<svelte:fragment slot="lead">
-		<span class="text-sm" data-testid="masthead-tagline">Keeping folks accountable</span>
+		<Breadcrumbs />
 	</svelte:fragment>
 
 	<div class="flex justify-center space-x-2">

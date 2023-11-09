@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CreateApplicationButton } from '$lib/features/create-application-button';
+	import { CreateApplicationButton } from '$lib/widgets/create-application-button';
 	import type { PokemonItem } from '../lib/fetch-pokemon';
 	export let pokemon: PokemonItem;
 </script>

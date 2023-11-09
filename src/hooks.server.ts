@@ -10,7 +10,7 @@ import { createTRPCHandle } from 'trpc-sveltekit';
 export const handle: Handle = sequence(
 	handleClerk(CLERK_SECRET_KEY, {
 		debug: true,
-		protectedPaths: ['/admin'],
+		protectedPaths: ['/dash'],
 		signInUrl: '/sign-in'
 	}),
 	createTRPCHandle({ router, createContext })
