@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { trpc } from '$lib/shared/trpc';
-	import { Button } from '$lib/shared/button';
+	import { Button } from '$lib/shared/design-system/ui/button';
 	import ClerkLoaded from 'clerk-sveltekit/client/ClerkLoaded.svelte';
 	import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte';
 	const trpcClient = trpc($page);
@@ -26,7 +26,7 @@
 <ClerkLoaded let:clerk>
 	{#if clerk && clerk.user}
 		<Button
-			type="button"
+			variant="outline"
 			aria-busy={loading}
 			on:click={() => {
 				userId = String(clerk.user?.id);
