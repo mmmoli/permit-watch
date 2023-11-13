@@ -59,6 +59,7 @@
 	"dependencies": {
 		"@trpc/client": "^10.43.1",
 		"@trpc/server": "^10.43.1",
+		"class-variance-authority": "^0.7.0",
 		"clerk-sveltekit": "^0.2.0",
 		"trpc-sveltekit": "^3.5.22",
 		"types-ddd": "^3.7.0",

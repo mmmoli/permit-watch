@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { trpc } from '$lib/shared/trpc';
+	import { Button } from '$lib/shared/button';
 	import ClerkLoaded from 'clerk-sveltekit/client/ClerkLoaded.svelte';
 	import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte';
 	const trpcClient = trpc($page);
@@ -24,18 +25,17 @@
 
 <ClerkLoaded let:clerk>
 	{#if clerk && clerk.user}
-		<button
+		<Button
 			type="button"
 			aria-busy={loading}
-			class="btn variant-filled-primary"
-			on:click|preventDefault={() => {
+			on:click={() => {
 				userId = String(clerk.user?.id);
 				mutation();
-			}}>Create Application</button
+			}}>Create Application</Button
 		>
 	{:else}
 		<SignInButton mode="modal">
-			<button type="button" class="btn variant-filled-primary">Create Application</button>
+			<Button type="button" class="btn variant-filled-primary">Create Application</Button>
 		</SignInButton>
 	{/if}
 </ClerkLoaded>
