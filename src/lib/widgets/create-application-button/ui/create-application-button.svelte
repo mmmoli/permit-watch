@@ -1,15 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { trpc } from '$lib/shared/trpc';
-	import { Button } from '$lib/shared/design-system/ui/button';
+	import { Button, type ButtonProps } from '$lib/shared/design-system/ui/button';
 	import ClerkLoaded from 'clerk-sveltekit/client/ClerkLoaded.svelte';
 	import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte';
 	const trpcClient = trpc($page);
 
 	let loading = false;
-	let userId: string;
 
-	const mutation = async () => {
+	const mutation = async (userId: string) => {
 		if (!userId) throw new Error('No user defined');
 		loading = true;
 		try {
@@ -18,24 +17,30 @@
 			});
 		} catch (error) {
 			console.log(error);
+		} finally {
+			loading = false;
 		}
-		loading = false;
+	};
+
+	export let label = 'Create Application';
+
+	const commonButtonProps: ButtonProps = {
+		size: 'sm'
 	};
 </script>
 
 <ClerkLoaded let:clerk>
 	{#if clerk && clerk.user}
 		<Button
-			variant="outline"
+			{...commonButtonProps}
 			aria-busy={loading}
-			on:click={() => {
-				userId = String(clerk.user?.id);
-				mutation();
-			}}>Create Application</Button
+			on:click={() => mutation(String(clerk.user?.id))}
 		>
+			{label}
+		</Button>
 	{:else}
 		<SignInButton mode="modal">
-			<Button type="button" class="btn variant-filled-primary">Create Application</Button>
+			<Button {...commonButtonProps}>{label}</Button>
 		</SignInButton>
 	{/if}
 </ClerkLoaded>
