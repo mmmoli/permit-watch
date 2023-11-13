@@ -5,7 +5,7 @@ export interface PokemonItem {
 }
 
 export const fetchPokemon = async () => {
-	const response = await fetch('https://pokeapi.co/api/v2/pokemon/ditto');
+	const response = await fetch('https://pokeapi.co/api/v2/pokemon/pikachu');
 	const data: PokemonItem = await response.json();
 	return data;
 };
