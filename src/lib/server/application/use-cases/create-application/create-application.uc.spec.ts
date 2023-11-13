@@ -1,6 +1,6 @@
 import { expect, test, describe, type Mock, afterEach, beforeEach, vi } from 'vitest';
 import { CreateApplicationUseCase } from './create-application.uc';
-import type { ApplicationRepoTrait } from '$lib/server/domain/application';
+import type { ApplicationRepoTrait } from '$lib/server/domain/application/application-repo-trait';
 import { Ok } from 'types-ddd';
 
 type MockedApplicationRepositoryTrait = ApplicationRepoTrait & {

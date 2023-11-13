@@ -1,5 +1,6 @@
-import { Application, type ApplicationRepoTrait } from '$lib/server/domain/application';
+import { Application } from '$lib/server/domain/application/application.ar';
 import { type UID, type IResult, Ok, Logger, ID } from 'types-ddd';
+import type { ApplicationRepoTrait } from '$lib/server/domain/application/application-repo-trait';
 
 export class InMemoryApplicationRepository implements ApplicationRepoTrait {
 	async fetchForId(id: UID<string>): Promise<IResult<Application>> {

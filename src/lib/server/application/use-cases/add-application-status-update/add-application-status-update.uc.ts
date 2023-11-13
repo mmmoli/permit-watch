@@ -1,5 +1,5 @@
 import { Fail, ID, type IResult, type IUseCase, Logger, Ok } from 'types-ddd';
-import { Application } from '$lib/server/domain/application';
+import { Application } from '$lib/server/domain/application/application.ar';
 import type { AddApplicationStatusUpdateUseCaseDeps } from './add-application-status-update.uc.deps';
 import type { AddApplicationStatusUpdateUseCaseDTO } from './add-application-status-update.uc.dto';
 

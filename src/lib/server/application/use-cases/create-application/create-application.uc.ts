@@ -1,7 +1,7 @@
 import { Fail, ID, type IResult, type IUseCase, Logger, Ok } from 'types-ddd';
 import type { CreateApplicationUseCaseDTO } from './create-application.uc.dto';
 import type { CreateApplicationUseCaseDeps } from './create-application.uc.deps';
-import { Application } from '$lib/server/domain/application';
+import { Application } from '$lib/server/domain/application/application.ar';
 
 export class CreateApplicationUseCase
 	implements IUseCase<CreateApplicationUseCaseDTO, Promise<IResult<void>>>
