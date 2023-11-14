@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Loader2 } from 'lucide-svelte';
 	import { page } from '$app/stores';
 	import { trpc } from '$lib/shared/trpc';
 	import { Button, type ButtonProps } from '$lib/shared/design-system/ui/button';
@@ -35,6 +36,9 @@
 			aria-busy={loading}
 			on:click={() => mutation(String(clerk.user?.id))}
 		>
+			{#if loading}
+				<Loader2 class="mr-2 h-4 w-4 animate-spin" />
+			{/if}
 			{label}
 		</Button>
 	{:else}
