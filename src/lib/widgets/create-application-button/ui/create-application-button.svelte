@@ -6,6 +6,7 @@
 	import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte';
 	const trpcClient = trpc($page);
 
+	export let label = 'Create Application';
 	let loading = false;
 
 	const mutation = async (userId: string) => {
@@ -21,8 +22,6 @@
 			loading = false;
 		}
 	};
-
-	export let label = 'Create Application';
 
 	const commonButtonProps: ButtonProps = {
 		size: 'sm'

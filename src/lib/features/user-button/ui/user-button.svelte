@@ -1,12 +1,12 @@
 <script lang="ts">
-	import ClerkLoading from 'clerk-sveltekit/client/ClerkLoading.svelte';
 	import SignedIn from 'clerk-sveltekit/client/SignedIn.svelte';
 	import SignedOut from 'clerk-sveltekit/client/SignedOut.svelte';
 	import SignInButton from 'clerk-sveltekit/client/SignInButton.svelte';
 	import UserButton from 'clerk-sveltekit/client/UserButton.svelte';
+	import Loading from './user-button-loading.svelte';
 </script>
 
-<ClerkLoading>…</ClerkLoading>
+<Loading />
 
 <SignedIn>
 	<UserButton afterSignOutUrl="/" />
