@@ -2,5 +2,5 @@ import { CreateApplicationUseCase } from '../application/use-cases/create-applic
 import { applicationRepo } from '../infra/db/application-repo';
 
 export const createApplicationUseCase = new CreateApplicationUseCase({
-	applicationRepo: applicationRepo
+	applicationRepo
 });
